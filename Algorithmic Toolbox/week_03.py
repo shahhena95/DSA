@@ -149,39 +149,37 @@ def get_max_digit(user_input):
             del numbers[-1]
 
     if len(single_digits) == 0:
-        for digit in numbers:
-            result += digit
+        result += ''.join(numbers)
     else:
-        for digit in single_digits:
-            result += digit
+        result += ''.join(single_digits)
 
     print(result)
 
 
 def main():
-    # coins = [0, 0, 0]
-    # value = int(input())
-    # coins = knapsack_money_change(value, coins)
-    # print(coins)
-    #
-    # user_input = sys.stdin.readlines()
-    # user_input = [line.strip('\n') for line in user_input]
-    # print(get_maximum_loot(user_input))
-    #
-    # user_input = sys.stdin.readlines()
-    # user_input = [line.strip('\n') for line in user_input]
-    # print(get_max_ad_revenue(user_input))
-    #
+    coins = [0, 0, 0]
+    value = int(input())
+    coins = knapsack_money_change(value, coins)
+    print(coins)
+
+    user_input = sys.stdin.readlines()
+    user_input = [line.strip('\n') for line in user_input]
+    print(get_maximum_loot(user_input))
+
+    user_input = sys.stdin.readlines()
+    user_input = [line.strip('\n') for line in user_input]
+    print(get_max_ad_revenue(user_input))
+
     user_input = sys.stdin.readlines()
     user_input = [line.strip('\n') for line in user_input]
     print(get_visit_count(user_input))
-    #
-    # user_input = int(input())
-    # get_max_prize_places(user_input, [0], 1)
-    #
-    # user_input = raw_input()
-    # user_input = user_input.split()
-    # get_max_digit(user_input)
+
+    user_input = int(input())
+    get_max_prize_places(user_input, [0], 1)
+
+    user_input = raw_input()
+    user_input = user_input.split()
+    get_max_digit(user_input)
 
 if __name__ == "__main__":
     main()

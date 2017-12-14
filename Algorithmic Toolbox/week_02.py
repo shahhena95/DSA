@@ -36,7 +36,7 @@ def lcm(a, b):
 
 
 # Constraints: n <= 10^18, m <= 10^5
-def fibonacci_huge(n, m):  #Slow for higher input values
+def fibonacci_huge(n, m):
     period = n+1
     length_period = min(n+1, m*m+1)
 
@@ -49,6 +49,7 @@ def fibonacci_huge(n, m):  #Slow for higher input values
         fibonacci_huge_series[i] = (fibonacci_huge_series[i-1] + fibonacci_huge_series[i-2]) % m
         if fibonacci_huge_series[i] == 1 and fibonacci_huge_series[i-1] == 0:
             period = i-1
+            break
 
     index = n % period
     return fibonacci_huge_series[index]
@@ -79,8 +80,6 @@ def main():
     value = map(int, (raw_input("For GCD and LCM (<= 10^9)")).split())
     print "GCD", gcd(value[0], value[1])
     print "LCM", lcm(value[0], value[1])
-
-    # need to re-think. Try this and remaining using matrix multiplication?
 
     value = map(int, (raw_input("For huge fibonacci modulo (<= 10^18, <= 10^5)")).split())
     print fibonacci_huge(value[0], value[1])

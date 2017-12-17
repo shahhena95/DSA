@@ -1,6 +1,6 @@
 
-## Coursera: Data Structures and Algorithms Specialization
+# Data Structures and Algorithms Specialization Assignments
 
-### Programming assignments for [Data Structures and Algorithms Specialization](https://www.coursera.org/specializations/data-structures-algorithms)
+## [Algorithmic Toolbox](https://www.coursera.org/learn/algorithmic-toolbox/)
 
-#### [Algorithmic Toolbox](https://www.coursera.org/learn/algorithmic-toolbox/)
+## [Data Structures](https://www.coursera.org/learn/data-structures/)

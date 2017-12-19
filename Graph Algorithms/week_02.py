@@ -63,6 +63,9 @@ def top_sort(user_input):
     print(ordering[::-1])
 
 
+# TODO strongly_connected_components(user_input)
+
+
 def main():
     user_input = sys.stdin.readlines()
     user_input = [line.strip('\n') for line in user_input]

@@ -33,39 +33,35 @@ def process_add_exit_input(user_input):
     return graph
 
 
-def connected_components(graph, visited=set(), count=0):
-    for node in graph.keys():
-        if node not in visited:
-            visited = dfs(graph, node, visited)
-            count += 1
+def dfs(graph, root, visited=[]):
+    if root not in visited:
+        return
 
-    return count
-
-
-def dfs(graph, root, visited=None):
-    if visited is None:
-        visited = set()
-
-    visited.add(root)
-
-    for child in graph[root]:
-        if child not in visited:
-            dfs(graph, child, visited)
-    return visited
+    else:
+        visited.append(root)
+        for child in graph[root]:
+            if child not in visited:
+                dfs(graph, child, visited)
+        return visited
 
 
 def find_exit(user_input):
     graph, start, end = process_find_exit_input(user_input)
     visited = dfs(graph, start)
     if end in visited:
-        print(1)
+        return 1
     else:
-        print(0)
+        return 0
 
 
 def add_exit(user_input):
     graph = process_add_exit_input(user_input)
-    print(connected_components(graph, set()))
+    visited, count = [], 0
+    for node in graph.keys():
+        if node not in visited:
+            visited = dfs(graph, node, visited)
+            count += 1
+    return count
 
 
 def main():

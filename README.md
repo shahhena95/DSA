@@ -1,6 +1,8 @@
 
-# Data Structures and Algorithms Specialization Assignments
+##Data Structures and Algorithms Specialization
 
-## [Algorithmic Toolbox](https://www.coursera.org/learn/algorithmic-toolbox/)
+###1. [Algorithmic Toolbox](https://www.coursera.org/learn/algorithmic-toolbox/)
 
-## [Data Structures](https://www.coursera.org/learn/data-structures/)
+###2. [Data Structures](https://www.coursera.org/learn/data-structures/)
+
+###3. [Algorithms on Graph](https://www.coursera.org/learn/algorithms-on-graphs/)

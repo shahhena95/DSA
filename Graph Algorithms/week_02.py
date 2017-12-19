@@ -66,8 +66,8 @@ def top_sort(user_input):
 def main():
     user_input = sys.stdin.readlines()
     user_input = [line.strip('\n') for line in user_input]
-    # print(detect_cycle(user_input))
-    print(top_sort(user_input))
+    print("Cycles", detect_cycle(user_input))
+    print("Topological sort order", top_sort(user_input))
 
 if __name__ == "__main__":
     main()

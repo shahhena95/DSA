@@ -18,6 +18,7 @@ def process_find_exit_input(user_input):
 
 
 def process_add_exit_input(user_input):
+    """Input graph is undirected"""
     user_input = [map(int, line.split()) for line in user_input]
 
     vertices = user_input[0][0]

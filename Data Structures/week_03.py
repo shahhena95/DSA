@@ -75,6 +75,9 @@ def is_binary(tree, root):
     return True
 
 
+#TODO Implement all functions for a BT
+
+
 def main():
     user_input = sys.stdin.readlines()
     nodes, array = process_input(user_input)

@@ -23,6 +23,8 @@ def heapify(array, i):
         array[i], array[min_index] = array[min_index], array[i]
         heapify(array, min_index)
 
+#TODO parallel processing Q2
+#TODO merging tables 03
 
 def main():
     user_input = sys.stdin.readline()

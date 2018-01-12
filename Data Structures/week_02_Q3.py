@@ -7,34 +7,34 @@ parent = list(range(0, n))
 ans = max(lines)
 
 
-def getParent(table):
+def get_parent(table):
     # find parent and compress path
-    if(table != parent[table]):
-        parent[table] =  getParent(parent[table])
+    if table != parent[table]:
+        parent[table] = get_parent(parent[table])
     return parent[table]
 
 
 def merge(destination, source):
     global ans
-    realDestination, realSource = getParent(destination), getParent(source)
+    real_destination, real_source = get_parent(destination), get_parent(source)
 
-    if realDestination == realSource:
+    if real_destination == real_source:
         return False
 
     # merge two components
     # use union by rank heuristic
     # update ans with the new maximum table size
-    if rank[realDestination] < rank[realSource]:
-        parent[realDestination] = realSource
-        lines[realSource] += lines[realDestination]
-        lines[realDestination] = 0
+    if rank[real_destination] < rank[real_source]:
+        parent[real_destination] = real_source
+        lines[real_source] += lines[real_destination]
+        lines[real_destination] = 0
     else:
-        parent[realSource] = realDestination
-        lines[realDestination] += lines[realSource]
-        lines[realSource] = 0
-        if rank[realDestination] == rank[realSource]:
-            rank[realDestination] += 1
-    ans = max(ans, lines[realSource], lines[realDestination])
+        parent[real_source] = real_destination
+        lines[real_destination] += lines[real_source]
+        lines[real_source] = 0
+        if rank[real_destination] == rank[real_source]:
+            rank[real_destination] += 1
+    ans = max(ans, lines[real_source], lines[real_destination])
     return True
 
 for i in range(m):

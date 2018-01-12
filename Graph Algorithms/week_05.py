@@ -53,8 +53,6 @@ def minimum_spanning_tree(user_input):
 
     return sum(distance)
 
-# TODO clustering problem
-
 
 def main():
     user_input = sys.stdin.readlines()

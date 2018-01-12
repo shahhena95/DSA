@@ -1,4 +1,3 @@
-#import sys
 import math
 
 
@@ -17,7 +16,7 @@ class Edge:
         self.weight = c
 
 
-def MakeSet(i, nodes, x, y):
+def make_set(i, nodes, x, y):
     nodes.append(Node(x[i], y[i], i))
 
 
@@ -25,15 +24,15 @@ def weight(x1, y1, x2, y2):
     return math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2))
 
 
-def Find(i, nodes):
+def find(i, nodes):
     if i != nodes[i].parent:
-        nodes[i].parent = Find(nodes[i].parent, nodes)
+        nodes[i].parent = find(nodes[i].parent, nodes)
     return nodes[i].parent
 
 
-def Union(u, v, nodes):
-    r1 = Find(u, nodes)
-    r2 = Find(v, nodes)
+def union(u, v, nodes):
+    r1 = find(u, nodes)
+    r2 = find(v, nodes)
     if r1 != r2:
         if nodes[r1].rank > nodes[r2].rank:
             nodes[r2].parent = r1
@@ -47,7 +46,7 @@ def clustering(x, y, k):
     n = len(x)
     nodes = []
     for i in range(n):
-        MakeSet(i, nodes, x, y)
+        make_set(i, nodes, x, y)
     edges = []
     for i in range(n):
         for j in range(i+1, n):
@@ -55,9 +54,9 @@ def clustering(x, y, k):
     edges = sorted(edges, key=lambda edge: edge.weight)
     union_num = 0
     for edge in edges:
-        if Find(edge.u, nodes) != Find(edge.v, nodes):
+        if find(edge.u, nodes) != find(edge.v, nodes):
             union_num += 1
-            Union(edge.u, edge.v, nodes)
+            union(edge.u, edge.v, nodes)
         if union_num > n - k:
             return edge.weight
     return -1.
